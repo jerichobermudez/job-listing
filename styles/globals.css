@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+body {
+  @apply bg-light-grayish-cyan-bg font-spartan text-dark-grayish-cyan;
+}
+
+.header {
+  height: 12rem;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url('../public/images/bg-header-desktop.svg');
+}
+
+.main-container {
+  margin-top: -3rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 375px) {
+  html {
+    font-size: 85%;
+  }
+  .header {
+    background-image: url('../public/images/bg-header-mobile.svg');
+  }
+
+  .job-container {
+    margin: 45px auto;
+    padding-top: 2.5rem;
+  }
+
+  .job-info img {
+    position: absolute;
+    margin-left: -0.1rem;
+    margin-top: -10.5rem;
+    float: left;
+  }
+}
