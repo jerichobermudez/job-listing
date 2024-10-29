@@ -12,9 +12,9 @@ const SearchInput = ({ searchText, setSearchText, addFilter, filters, removeFilt
             <span className="px-2">{filter}</span>
             <button
               onClick={() => removeFilter(filter)}
-              className="bg-desaturated-dark-cyan text-white px-2 py-0.5 rounded-r-md hover:bg-very-dark-grayish-cyan"
+              className="bg-desaturated-dark-cyan text-white px-2 py-1 rounded-r-md hover:bg-very-dark-grayish-cyan"
             >
-              ✕
+              <img src="/images/icon-remove.svg" alt="Remove" className="w-4 h-4" />
             </button>
           </div>
         ))}
@@ -30,7 +30,7 @@ const SearchInput = ({ searchText, setSearchText, addFilter, filters, removeFilt
       {filters.length > 0 && (
         <button
           onClick={clearFilters}
-          className="text-dark-grayish-cyan font-bold hover:underline"
+          className="text-dark-grayish-cyan font-bold hover:underline hover:text-desaturated-dark-cyan"
         >
           Clear
         </button>

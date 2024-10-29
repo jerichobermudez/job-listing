@@ -2,13 +2,25 @@ import React, { useEffect, useState } from 'react';
 import JobCard from '../components/JobCard';
 import SearchInput from '../components/SearchInput';
 
+interface Job {
+  id: number;
+  company: string;
+  position: string;
+  role: string;
+  level: string;
+  contract: string;
+  location: string;
+  languages: string[];
+  tools: string[];
+}
+
 export default function Home() {
-  const [jobs, setJobs] = useState([]);
-  const [filters, setFilters] = useState([]);
-  const [searchText, setSearchText] = useState('');
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [filters, setFilters] = useState<string[]>([]);
+  const [searchText, setSearchText] = useState<string>('');
 
   useEffect(() => {
-    // Get jobs
+    // Get jobs api
     const fetchJobs = async () => {
       try {
         const response = await fetch('/api/jobs');
@@ -24,14 +36,14 @@ export default function Home() {
   }, []);
 
   // Add filter on click
-  const addFilter = (filter) => {
+  const addFilter = (filter: string) => {
     if (!filters.includes(filter)) {
       setFilters([...filters, filter]);
     }
   };
 
   // Remove search filter
-  const removeFilter = (filter) => {
+  const removeFilter = (filter: string) => {
     setFilters(filters.filter((f) => f !== filter));
   };
 
@@ -42,8 +54,11 @@ export default function Home() {
   };
 
   // Search on enter
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && searchText.trim() !== '') {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (
+      e.key === 'Enter' &&
+      searchText.trim() !== ''
+    ) {
       addFilter(searchText.trim());
       setSearchText('');
     }
