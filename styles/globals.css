@@ -27,6 +27,11 @@ body {
 }
 
 /* Mobile Styles */
+@media (max-width: 475px) {
+  html {
+    font-size: 90%;
+  }
+}
 @media (max-width: 375px) {
   html {
     font-size: 85%;
