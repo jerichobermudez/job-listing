@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'desaturated-dark-cyan': 'hsl(180, 29%, 50%)',
-        'light-grayish-cyan-bg': 'hsl(180, 52%, 96%)',
-        'light-grayish-cyan-filter': 'hsl(180, 31%, 95%)',
-        'dark-grayish-cyan': 'hsl(180, 8%, 52%)',
-        'very-dark-grayish-cyan': 'hsl(180, 14%, 20%)',
+        'desaturated-dark-cyan': 'var(--desaturated-dark-cyan)',
+        'light-grayish-cyan-bg': 'var(--light-grayish-cyan-bg)',
+        'light-grayish-cyan-filter': 'var(--light-grayish-cyan-filter)',
+        'dark-grayish-cyan': 'var(--dark-grayish-cyan)',
+        'very-dark-grayish-cyan': 'var(--very-dark-grayish-cyan)',
       },
       fontFamily: {
         spartan: ['Spartan', 'sans-serif'],

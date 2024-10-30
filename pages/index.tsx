@@ -90,19 +90,22 @@ export default function Home() {
 
   return (
     <>
-      {/* Header with Background Image */}
+      {/* Header */}
       <header className="header h-64 bg-desaturated-dark-cyan"></header>
+
+      {/* Main container */}
       <div className="bg-light-grayish-cyan container mx-auto py-4 px-5 sm:px-6 main-container">
+        {/* Search Input */}
         <SearchInput
           searchText={searchText}
           setSearchText={setSearchText}
-          addFilter={addFilter}
           filters={filters}
           removeFilter={removeFilter}
           clearFilters={clearFilters}
           handleKeyDown={handleKeyDown}
         />
 
+        {/* Jobs List */}
         {
           filteredJobs.length === 0 ? (
             <div className="bg-light-grayish-cyan-filter text-center p-6 rounded shadow-md">
