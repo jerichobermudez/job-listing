@@ -4,13 +4,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method !== 'GET') {
+    return res.status(405).end();
+  }
+
   try {
     const data = await import('../../public/data.json');
 
-    res.status(200).json(data.default);
+    return res.status(200).json(data.default);
   } catch (error) {
     console.error('Error fetching jobs:', error);
 
-    res.status(500).json([]);
+    return res.status(500).end();
   }
 }
