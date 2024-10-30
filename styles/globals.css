@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-light-grayish-cyan-bg font-spartan text-dark-grayish-cyan;
+  @apply bg-light-grayish-cyan-bg font-spartan;
 }
 
 .header {
